@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#C2185B</color>
+    <color name="colorPrimaryDark">#880E4F</color>
+    <color name="colorAccent">#7C4DFF</color>
+    <color name="why_here_color">#3F51B5</color>
+    <color name="history_color">#43A047</color>
+    <color name="culture_color">#FFB300</color>
+    <color name="restaurants_color">#A1887F</color>
+</resources>
