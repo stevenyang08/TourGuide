@@ -1,6 +1,5 @@
 package com.example.android.tourguide;
 
-import android.media.Image;
 import android.support.v4.content.ContextCompat;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -12,11 +11,21 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-/**
- * Created by stevenyang on 3/9/17.
- */
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class TourItemAdapter extends ArrayAdapter<TourItem> {
+
+    static class ViewHolder {
+        @BindView(R.id.list_item_title) TextView titleTextView;
+        @BindView(R.id.list_item_information) TextView informationTextView;
+        @BindView(R.id.list_item_layout) LinearLayout listItemLayout;
+        @BindView(R.id.list_item_image) ImageView imageView;
+
+        public ViewHolder(View view) {
+            ButterKnife.bind(this, view);
+        }
+    }
 
     private int mColorId;
 
@@ -27,32 +36,29 @@ public class TourItemAdapter extends ArrayAdapter<TourItem> {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-        View listItem = convertView;
-
-        if (listItem == null) {
-            listItem = LayoutInflater.from(ThisApplication.getContext()).inflate(R.layout.listview_item, parent, false);
+        ViewHolder holder;
+        if (convertView != null) {
+            holder = (ViewHolder) convertView.getTag();
+        } else {
+            convertView = LayoutInflater.from(ThisApplication.getContext()).inflate(R.layout.listview_item, parent, false);
+            holder = new ViewHolder(convertView);
+            convertView.setTag(holder);
         }
 
         TourItem currentItem = getItem(position);
 
-        TextView titleTextView = (TextView) listItem.findViewById(R.id.list_item_title);
-        titleTextView.setText(currentItem.getTitle());
-
-        TextView informationTextView = (TextView) listItem.findViewById(R.id.list_item_information);
-        informationTextView.setText(currentItem.getInformation());
-
-        LinearLayout linearLayout = (LinearLayout) listItem.findViewById(R.id.list_item_layout);
+        holder.titleTextView.setText(currentItem.getTitle());
+        holder.informationTextView.setText(currentItem.getInformation());
         int color = ContextCompat.getColor(getContext(), mColorId);
-        linearLayout.setBackgroundColor(color);
+        holder.listItemLayout.setBackgroundColor(color);
 
-        ImageView imageView = (ImageView) listItem.findViewById(R.id.list_item_image);
         if (currentItem.hasImage()) {
-            imageView.setImageResource(currentItem.getImageId());
-            imageView.setVisibility(View.VISIBLE);
+            holder.imageView.setImageResource(currentItem.getImageId());
+            holder.imageView.setVisibility(View.VISIBLE);
         } else {
-            imageView.setVisibility(View.GONE);
+            holder.imageView.setVisibility(View.GONE);
         }
 
-        return listItem;
+        return convertView;
     }
 }

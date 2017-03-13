@@ -3,4 +3,60 @@
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
     <string name="placer">Hi</string>
+    <string name="why_here_header">Why Here?</string>
+    <string name="history_header">History</string>
+    <string name="culture_header">Culture</string>
+    <string name="restaurant_header">Restaurants</string>
+
+    <string name="why_here_0_title">Startup Economy</string>
+    <string name="why_here_0_information">Fukuoka\’s startup ecosystem is still in its early days.
+                Not as many startups here as in other big cities like Tokyo.  It has its cons (obviously), everything has to be built, we don’t have a lot of investors here,
+                not so many English meetups etc. But it also has many advantages. The community being young and still small
+                it is easier to get recognition and get your name on the map. People are also much more motivated.
+                We all have to work together to grow the ecosystem and people are willing to help and share their experience.</string>
+
+    <string name="why_here_1_title">Demographics</string>
+    <string name="why_here_1_information">Fukuoka is a medium size city (1.5million habitants) and its population is pretty young.
+                Average of 40 years old-ish. This makes of the city a very active city, very lively.
+                Business wise, a young population means that people are more open minded,
+                more prone to change and willing to accept new concepts.</string>
+
+    <string name="history_0_title">Fukuoka Castle</string>
+    <string name="history_0_information">The ruins of Fukuoka Castle (福岡城跡, Fukuokajōato)
+                are located in the middle of the city in Maizuru Park, named after the castle\'s alias, Maizuru
+                Castle. During the Edo Period (1603-1867), Fukuoka Castle used to be the largest castle on Kyushu,
+                but it was almost completely torn down after the Meiji Restoration as an unwanted symbol of the feudal
+                past.</string>
+
+    <string name="history_1_title">Kushida Shrine</string>
+    <string name="history_1_information">A Shinto shrine located in Hakata-ku, Fukuoka, Japan. Dedicated to
+                Amaterasu and Susanoo, it is said to have been founded in 757. The Hakata Gion Yamakasa festival is centred
+                on the shrine.</string>
+
+    <string name="culture_0_title">Culture</string>
+    <string name="culture_0_information">Fukuoka is bordered by the ocean to the north, east, and west, and
+                each of its coastlines has a unique character. Breathtaking views and outdoor activities can be
+                enjoyed in the area\'s mild climate.
+                The prefectural capital of Fukuoka City overlooks the Port of Hakata, a harbor that has long facilitated
+                the region\'s prosperity through trade with other parts of Asia. In addition to being the administrative and
+                economic heart of the prefecture, Fukuoka is a lively commercial center from which trends in culture and fashion
+                filter out to other parts of Japan. International flights from a variety of countries fly into and out of
+                this "gateway to Asia" and the city\'s shops make it easy for tourists to satisfy their urge to splurge.
+                Fukuoka also boasts popular annual festivals with long histories. The Hakata Dontaku Festival, which takes place
+                on May 3-4, dates back to the twelfth century. Originally a means of celebrating the New Year, it is now a major
+                event in which about 20,000 residents parade through the city dressed in a variety of costumes, attracting as many
+                as two million spectators.</string>
+
+    <string name="restaurant_0_title">Hakata Miyachiku</string>
+    <string name="restaurant_0_information">Imagining to be a healing space in mother nature of Miyazaki and country of fairy tale,
+                Fully enjoy the delicious taste from Miyazaki Beef.
+                Private dining room available. Restaurants as delivering the philosophy of producers
+                For being the bridge between clients and producers, Miyazaki Japan cows, growing from the good shiny environment of Kawasaki,
+                are continuously processed through the producing line of our company and distributed into our affiliated restaurants.
+                Fukuoka Hakata, the birthplace of Kyushu, offers the safe and worry-free Miyazaki Japan beef,
+                and all kind of other tasty food of Miyazaki.</string>
+
+    <string name="restaurant_1_title">Kawataro</string>
+    <string name="restaurant_1_information">With over 40 years of history, we were the first restaurant in Japan to have
+                an on-site fish tank. Enjoy unbeatably fresh seafood and authentic Japanese dishes and some new flavors too.</string>
 </resources>

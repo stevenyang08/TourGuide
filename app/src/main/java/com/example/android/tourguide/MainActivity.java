@@ -8,11 +8,22 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.os.Bundle;
+import android.view.View;
+
+import butterknife.BindView;
+import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
+    static class ViewHolder {
+        @BindView(R.id.container) ViewPager viewPager;
+        @BindView(R.id.tabs) TabLayout tabLayout;
+        public ViewHolder(View view) {
+            ButterKnife.bind(this, view);
+        }
+    }
+
     private SectionsPagerAdapter mSectionsPagerAdapter;
-    private ViewPager mViewPager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,11 +32,9 @@ public class MainActivity extends AppCompatActivity {
 
         mSectionsPagerAdapter = new SectionsPagerAdapter(getSupportFragmentManager());
 
-        mViewPager = (ViewPager) findViewById(R.id.container);
-        mViewPager.setAdapter(mSectionsPagerAdapter);
-
-        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
-        tabLayout.setupWithViewPager(mViewPager);
+        ViewHolder holder = new ViewHolder(this.findViewById(R.id.main_content));
+        holder.viewPager.setAdapter(mSectionsPagerAdapter);
+        holder.tabLayout.setupWithViewPager(holder.viewPager);
     }
 
     public class SectionsPagerAdapter extends FragmentPagerAdapter {
@@ -38,17 +47,17 @@ public class MainActivity extends AppCompatActivity {
         public Fragment getItem(int position) {
             switch (position) {
                 case 0:
-                    WhyHere whyHere = new WhyHere();
-                    return whyHere;
+                    WhyHereFragment whyHereFragment = new WhyHereFragment();
+                    return whyHereFragment;
                 case 1:
-                    History history = new History();
-                    return history;
+                    HistoryFragment historyFragment = new HistoryFragment();
+                    return historyFragment;
                 case 2:
-                    Culture culture = new Culture();
-                    return culture;
+                    CultureFragment cultureFragment = new CultureFragment();
+                    return cultureFragment;
                 case 3:
-                    Restaurant restaurant = new Restaurant();
-                    return restaurant;
+                    RestaurantFragment restaurantFragment = new RestaurantFragment();
+                    return restaurantFragment;
                 default:
                     return null;
             }
@@ -64,13 +73,13 @@ public class MainActivity extends AppCompatActivity {
         public CharSequence getPageTitle(int position) {
             switch (position) {
                 case 0:
-                    return "Why Here";
+                    return getString(R.string.why_here_header);
                 case 1:
-                    return "History";
+                    return getString(R.string.history_header);
                 case 2:
-                    return "Culture";
+                    return getString(R.string.culture_header);
                 case 3:
-                    return "Restaurants";
+                    return getString(R.string.restaurant_header);
             }
             return null;
         }
